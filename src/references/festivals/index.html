@@ -1,0 +1,30 @@
+---
+layout: posts_festival
+---
+
+<section class="">
+  {% set postslist = collections.post_festival %} {% for post_festival in
+  postslist | reverse %}
+  <article class="">
+    <h2 class="">
+      <a href="{{ post_festival.url | url }}">
+        {% if post_festival.data.title %} {{ post_festival.data.title }} {% else
+        %} Untitled {% endif %}
+      </a>
+    </h2>
+    <p class="">
+      <time>
+        {{ post_festival.date | readableDate }} by
+        <a>{{ post_festival.data.author }}</a>
+      </time>
+    </p>
+    {% if post_festival.data.description %}
+    <p class="">{{ post_festival.data.description }}</p>
+    {% endif %}
+
+    <p>
+      <a href="{{ post_festival.url | url }}" class=""> Read more → </a>
+    </p>
+  </article>
+  {% endfor %}
+</section>

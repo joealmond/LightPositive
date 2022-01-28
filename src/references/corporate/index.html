@@ -1,0 +1,30 @@
+---
+layout: posts_corporate
+---
+
+<section class="">
+  {% set postslist = collections.post_corporate %} {% for post_corporate in
+  postslist | reverse %}
+  <article class="">
+    <h2 class="">
+      <a href="{{ post_corporate.url | url }}">
+        {% if post_corporate.data.title %} {{ post_corporate.data.title }} {%
+        else %} Untitled {% endif %}
+      </a>
+    </h2>
+    <p class="">
+      <time>
+        {{ post_corporate.date | readableDate }} by
+        <a>{{ post_corporate.data.author }}</a>
+      </time>
+    </p>
+    {% if post_corporate.data.description %}
+    <p class="">{{ post_corporate.data.description }}</p>
+    {% endif %}
+
+    <p>
+      <a href="{{ post_corporate.url | url }}" class=""> Read more → </a>
+    </p>
+  </article>
+  {% endfor %}
+</section>
