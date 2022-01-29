@@ -4,6 +4,7 @@
   --bg-mid: rgb(38, 38, 38);
   --bg-dark: rgb(30, 30, 24);
   --font-orange: rgb(237, 118, 27);
+  --font-dark-grey: rgb(128, 128, 128);
   --font-grey: rgb(193, 193, 193);
   --font-white: rgb(255, 255, 255);
 
@@ -72,6 +73,15 @@ p {
   color: var(--font-grey);
 }
 
+.aboutus__text--en > p,
+.aboutus__text--hu > p {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 2rem;
+  color: var(--font-dark-grey);
+}
+
 /* LAYOUT */
 html {
   scroll-behavior: smooth;
@@ -98,6 +108,8 @@ form > * {
 .nav__container {
   background-color: var(--bg-dark);
   color: var(--font-grey);
+  position: sticky;
+  top: 0;
 }
 
 .nav__nav {
@@ -116,6 +128,11 @@ form > * {
   height: 35px;
   padding: 25px;
 }
+.nav__logo-img:hover,
+.nav__logo-img:focus {
+  transition: all 0.5s ease-out;
+  filter: drop-shadow(0px 0px 6px var(--font-orange));
+}
 
 .nav__list-container {
 }
@@ -130,10 +147,17 @@ form > * {
 .nav__list-link:hover,
 .nav__list-link:focus {
   color: var(--font-orange);
+  transition: all 0.5s ease-out;
+  filter: drop-shadow(0px 0px 6px var(--font-orange));
 }
 .nav__button {
   background-color: var(--bg-dark);
   display: none;
+}
+.nav__button-image:hover,
+.nav__button-image:focus {
+  transition: all 0.5s ease-out;
+  filter: drop-shadow(0px 0px 6px var(--font-orange));
 }
 .nav__button-image {
   height: 27px;
@@ -153,47 +177,51 @@ form > * {
 .footer__conatiner {
   background-color: var(--bg-dark);
   color: var(--font-grey);
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
 }
 
 .footer__footer {
-  max-width: 128rem;
-  margin: auto;
   height: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  align-self: bottom;
+  text-align: center;
 }
 
 .footer__text {
   color: var(--font-grey);
+  text-align: center;
 }
 
 /* MAIN CONTENT */
 
 .content__body {
-  display: flex;
-  min-height: 100vh;
-  flex-direction: column;
-  justify-content: space-between;
 }
 
 .logo-menu__container {
   max-width: 128rem;
   margin: auto;
+  padding-top: 3vh;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  height: 50vh;
-  min-height: 240px;
+  min-height: 200px;
   flex-wrap: wrap;
 }
 .logo-menu__card {
-  margin: 15px;
-  align-items: center;
+  all: unset;
+  text-align: center;
+  margin: 10px;
+  max-height: 130px;
+}
+.logo-menu__card:hover,
+.logo-menu__card:focus {
+  transition: all 0.5s ease-out;
+  transform: scale(1.1);
+  filter: drop-shadow(0px 0px 6px var(--font-orange));
 }
 .logo-menu__img {
-  height: 15vh;
+  width: 100px;
+  align-items: center;
 }
 .logo-menu__text {
   text-transform: uppercase;
@@ -201,10 +229,9 @@ form > * {
 }
 .spacer__container {
   max-width: 128rem;
-  margin: auto;
   display: flex;
   justify-content: center;
-  height: 10vh;
+  margin: 5vh auto;
 }
 .spacer__img {
   max-width: 100rem;
@@ -213,29 +240,193 @@ form > * {
 }
 .opening-image__container {
   max-width: 128rem;
-  margin: auto;
-  max-height: 40vh;
+  margin: 10vh auto;
+  width: 70vw;
+  min-height: 100px;
+  padding-bottom: 5vh;
+}
+.opening-image__border {
   display: flex;
-  align-content: center;
   justify-content: center;
+  overflow: hidden;
+  outline: 1px solid var(--font-white);
+  border: 5px solid var(--bg-mid);
 }
 .opening-image__img {
-  justify-self: flex-end;
-  width: 90vw;
-  max-width: 110rem;
-  object-fit: scale-down;
-  padding: 5px;
-  outline: 1px solid whitesmoke;
+  height: 40vh;
+  width: 70vw;
+  object-fit: cover;
 }
 
-@media screen and (max-width: 380px) {
-  .spacer__container {
-    display: none;
-  }
-  .opening-image__container {
-    display: none;
-  }
-  .logo-menu__container {
-    height: 85vh;
-  }
+/* ABOUT US */
+
+.aboutus__body {
+  display: flex;
+  justify-content: center;
+}
+.aboutus__content {
+  max-width: 128rem;
+  margin: auto;
+  padding-top: 3vh;
+}
+.aboutus__heading--hu,
+.aboutus__heading--en {
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+.aboutus__image-wrapper {
+  padding-top: 3vh;
+  display: flex;
+  justify-content: center;
+}
+.aboutus__heading-image {
+  padding: 0;
+  width: 70vw;
+  max-width: 45rem;
+}
+.aboutus__text-container--hu,
+.aboutus__text-container--en {
+  padding: 3rem;
+  width: 80vw;
+  max-width: 80rem;
+  overflow: hidden;
+}
+.aboutus__language-picker {
+  padding-bottom: 3rem;
+}
+.aboutus__language-picker > p {
+  display: inline-block;
+}
+.hu {
+}
+.en {
+  display: none;
+}
+.hu-sw {
+  color: var(--font-orange);
+}
+.en-sw {
+}
+
+.hu-sw:hover,
+.hu-sw:focus {
+  color: var(--font-orange);
+  transition: all 0.5s ease-out;
+  transform: scale(1.1);
+  filter: drop-shadow(0px 0px 6px var(--font-orange));
+}
+.en-sw:hover,
+.en-sw:focus {
+  color: var(--font-orange);
+  transition: all 0.5s ease-out;
+  transform: scale(1.1);
+  filter: drop-shadow(0px 0px 6px var(--font-orange));
+}
+
+/* CONTACT */
+
+.contact__body {
+  display: flex;
+  justify-content: center;
+}
+.contact__content {
+  max-width: 128rem;
+  margin: auto;
+  padding-top: 3vh;
+}
+
+.contact__heading {
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+.contact-block1 {
+  display: flex;
+  justify-content: space-around;
+}
+.form__body {
+  padding-top: 3vh;
+  display: flex;
+  justify-content: center;
+}
+.form__container {
+}
+.form__name {
+}
+.form__email {
+}
+.form__subject {
+}
+.form__message {
+}
+.form__submit {
+}
+.map__boody {
+  padding-top: 3vh;
+  display: flex;
+  justify-content: center;
+}
+.map__container {
+}
+.map__container > iframe {
+  width: 70vw;
+  max-width: 45rem;
+}
+.contact__block2 {
+  display: flex;
+  justify-content: space-between;
+}
+.contact__text-container {
+  max-width: 128rem;
+  margin: auto;
+  padding-top: 3vh;
+}
+.contact__text-container--text {
+  text-align: center;
+}
+.contact__text-container--text > p {
+  text-align: center;
+}
+.card__img-wrapper {
+}
+.card__email {
+  color: var(--font-orange);
+  text-align: center;
+}
+
+.contact__spacer-container {
+  display: none;
+  max-width: 128rem;
+  display: flex;
+  justify-content: center;
+  margin: 5vh auto;
+}
+.contact__spacer {
+  display: none;
+  max-width: 100rem;
+  height: min-content;
+  width: 70rem;
+}
+.contact__card-conatainer {
+  padding-bottom: 2rem;
+}
+.card__img-wrapper {
+  padding-top: 3vh;
+  display: flex;
+  justify-content: center;
+}
+.card__img {
+  padding: 0;
+  width: 30rem;
+}
+
+.card__heading {
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  padding-top: 2vh;
+}
+.card__text {
+  text-align: center;
 }
