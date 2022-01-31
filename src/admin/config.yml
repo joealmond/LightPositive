@@ -4,25 +4,28 @@ backend:
   name: git-gateway
   branch: master
 
-media_folder: "src/static/img"
-public_folder: "/static/img"
+media_folder: "src/static/img/uploads"
+public_folder: "/static/img/uploads"
 
 # Please run "npx netlify-cms-proxy-server" for local backend
 local_backend: true
-publish_mode: editorial_workflow
+# publish_mode: editorial_workflow
 collections:
   - label: "Céges referenca"
     name: "corporate"
     folder: "src/references/corporate"
+    path: "{{slug}}/index"
+    media_folder: ""
+    public_folder: ""
     create: true
     editor:
       preview: true
     fields:
       - { label: "Title", name: "title", widget: "string" }
-      - { label: "Description", name: "description", widget: "string" }
-      - { label: "Author", name: "author", widget: "string" }
-      - { label: "Publish Date", name: "date", widget: "datetime" }
       - { label: "Body", name: "body", widget: "markdown" }
+      - label: "Cover Image"
+        name: "image"
+        widget: "image"
       - widget: select
         label: "tags"
         name: "tags"
@@ -32,15 +35,18 @@ collections:
   - label: "Fesztivál referenca"
     name: "festival"
     folder: "src/references/festivals"
+    path: "{{slug}}/index"
+    media_folder: ""
+    public_folder: ""
     create: true
     editor:
       preview: true
     fields:
       - { label: "Title", name: "title", widget: "string" }
-      - { label: "Description", name: "description", widget: "string" }
-      - { label: "Author", name: "author", widget: "string" }
-      - { label: "Publish Date", name: "date", widget: "datetime" }
       - { label: "Body", name: "body", widget: "markdown" }
+      - label: "Cover Image"
+        name: "image"
+        widget: "image"
       - widget: select
         label: "tags"
         name: "tags"

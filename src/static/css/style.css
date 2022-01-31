@@ -56,8 +56,8 @@ h2 {
 
 h3 {
   font-style: normal;
-  font-weight: bold;
-  font-size: 1.7rem;
+  font-weight: normal;
+  font-size: 1.5rem;
   line-height: 3rem;
   letter-spacing: -0.015em;
   color: var(--font-orange);
@@ -337,11 +337,12 @@ form > * {
 }
 
 .contact__heading {
-  padding: 3rem 0;
+  padding-top: 3rem;
+  margin: 0;
   text-align: center;
 }
 .contact__block1 {
-  padding: 4rem 0;
+  padding: 0;
   max-width: 128rem;
   display: flex;
   margin: auto;
@@ -364,7 +365,7 @@ form > * {
 .form__body {
   flex-basis: 40rem;
   min-height: 40rem;
-  padding: 0 3rem;
+  padding: 3rem;
   height: fit-content;
 }
 .form__container {
@@ -453,7 +454,7 @@ form > * {
 }
 
 .map__boody {
-  padding: 0 3rem;
+  padding: 3rem;
   flex-basis: 40rem;
 }
 .map__container {
@@ -530,4 +531,44 @@ form > * {
 }
 .card__text > p {
   margin: 0.5rem 0;
+}
+
+/* REFERENCES */
+
+.refs__body {
+  max-width: 128rem;
+  width: 90vw;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+}
+.refs__heading {
+  text-align: center;
+  padding: 0;
+}
+.refs__content {
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  flex-wrap: nowrap;
+}
+.refs__item {
+  padding: 2rem;
+  width: 100%;
+  min-width: 10rem;
+}
+.refs__link {
+}
+.refs__img {
+  width: 100%;
+}
+.refs__item-heading {
+  padding: 0;
+  text-align: center;
+}
+
+@media screen and (max-width: 700px) {
+  .refs__content {
+    flex-wrap: wrap;
+  }
 }
