@@ -329,6 +329,7 @@ form > * {
 
 .contact__body {
   display: flex;
+  justify-content: center;
 }
 .contact__content {
   max-width: 128rem;
@@ -372,7 +373,7 @@ form > * {
   display: flex;
   flex-direction: column;
   height: fit-content;
-  width: 40rem;
+  min-width: 30rem;
 }
 .form__label {
   padding: 0.2rem 0;
@@ -423,6 +424,7 @@ form > * {
   line-height: 2rem;
   letter-spacing: -0.015em;
   width: 98%;
+  outline-width: 2px;
 }
 
 .form__submit {
