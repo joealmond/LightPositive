@@ -572,3 +572,34 @@ form > * {
     flex-wrap: wrap;
   }
 }
+.posts__body {
+  max-width: 128rem;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  align-items: center;
+}
+.posts__content {
+  align-self: center;
+}
+.posts__heading {
+  display: flex;
+  align-items: center;
+  padding: 0;
+}
+
+.post__body {
+  max-width: 128rem;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  align-items: center;
+}
+.post__content {
+  align-self: center;
+}
+.post__heading {
+  display: flex;
+  align-items: center;
+  padding: 0;
+}

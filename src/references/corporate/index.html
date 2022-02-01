@@ -2,30 +2,19 @@
 layout: posts_corporate
 ---
 
-<section class="">
+<section class="posts__body">
   {% set postslist = collections.post_corporate %} {% for post_corporate in
   postslist | reverse %}
-  <article class="">
-    <h2 class="">
+  <article class="posts__content">
+    <h3 class="posts__heading">
       <a href="{{ post_corporate.url | url }}">
         {% if post_corporate.data.title %} {{ post_corporate.data.title }} {%
         else %} Untitled {% endif %}
       </a>
-    </h2>
-    <p class="">
-      <time>
-        {{ post_corporate.date | readableDate }} by
-        <a>{{ post_corporate.data.author }}</a>
-      </time>
-    </p>
-    {% if post_corporate.data.description %}
-    <p class="">{{ post_corporate.data.description }}</p>
-    {% endif %}
-
-    <p>
+    </h3>
       <a href="{{ post_corporate.url | url }}" class=""
         >ide kellene beszúrni a borítót!
-        <!-- <img src="{{co00}}" alt="" /> -->
+        <!-- <img src="{{ posts_corporate.data.kep.url | url }}" class="post__image" alt="" /> -->
       </a>
     </p>
   </article>
