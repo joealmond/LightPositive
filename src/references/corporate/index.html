@@ -12,9 +12,9 @@ layout: posts_corporate
         else %} Untitled {% endif %}
       </a>
     </h3>
-      <a href="{{ post_corporate.url | url }}" class=""
-        >ide kellene beszúrni a borítót!
-        <!-- <img src="{{ posts_corporate.data.kep.url | url }}" class="post__image" alt="" /> -->
+      <a href="{{ post_corporate.url | url }}" class="posts__link"
+        >
+        <img src="{{post_corporate.url}}{{post_corporate.data.image}}" class="posts__image" alt="" />
       </a>
     </p>
   </article>

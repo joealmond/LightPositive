@@ -12,8 +12,8 @@ layout: posts_festival
         %} Untitled {% endif %}
       </a>
     </h2>
-      <a href="{{ post_festival.url | url }}" class=""> Read more → 
-        <!-- <img src="{{ posts_corporate.data.kep.url | url }}" class="post__image" alt="" /> -->
+      <a href="{{ post_festival.url | url }}" class="posts__link">
+        <img src="{{post_festival.url}}{{post_festival.data.image}}" class="posts__image" alt="" />
       </a>
     </p>
   </article>
