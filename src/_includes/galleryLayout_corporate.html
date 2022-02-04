@@ -1,0 +1,13 @@
+---
+layout: default
+---
+
+<section class="post__body">
+  {% set image = collections.corporate %} {% for corporate in image %}
+  <div class="post__content">
+    <a href="{{corporate.url}}{{corporate.data.galleryImages[0]}}"><img src="{{corporate.url}}{{corporate.data.galleryImages[0]}}" class="post__image" alt=""/></a>
+    <a href="{{corporate.url}}{{corporate.data.galleryImages[1]}}"><img src="{{corporate.url}}{{corporate.data.galleryImages[1]}}" class="post__image" alt=""/></a>
+    <a href="{{corporate.url}}{{corporate.data.galleryImages[2]}}"><img src="{{corporate.url}}{{corporate.data.galleryImages[2]}}" class="post__image" alt=""/></a>
+  </dvi>
+  {% endfor %}
+</section>

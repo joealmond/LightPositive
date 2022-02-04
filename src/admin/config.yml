@@ -21,17 +21,19 @@ collections:
     editor:
       preview: true
     fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Body", name: "body", widget: "markdown" }
-      - label: "Cover Image"
-        name: "image"
-        widget: "image"
-      - widget: select
-        label: "tags"
-        name: "tags"
-        multiple: false
-        create: true
-        options: ["post_corporate"]
+      - { label: "Cím", name: "title", widget: "string" }
+      - { label: "Borítókép", name: "coverImage", widget: "image" }
+      - label: "Galéria"
+        name: "galleryImages"
+        widget: "list"
+        summary: "Fájlnév: {{fields.image}}"
+        label_singular: "kép"
+        field: { label: Kép, name: image, widget: image }
+      - label: "layout"
+        name: "layout"
+        widget: "hidden"
+        default: "galleryLayout_corporate.html"
+
   - label: "Fesztivál referenca"
     name: "festival"
     folder: "src/references/festivals"
@@ -42,14 +44,15 @@ collections:
     editor:
       preview: true
     fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Body", name: "body", widget: "markdown" }
-      - label: "Cover Image"
-        name: "image"
-        widget: "image"
-      - widget: select
-        label: "tags"
-        name: "tags"
-        multiple: false
-        create: true
-        options: ["post_festival"]
+      - { label: "Cím", name: "title", widget: "string" }
+      - { label: "Borítókép", name: "coverImage", widget: "image" }
+      - label: "Galéria"
+        name: "galleryImages"
+        widget: "list"
+        summary: "Fájlnév: {{fields.image}}"
+        label_singular: "kép"
+        field: { label: Kép, name: image, widget: image }
+      - label: "layout"
+        name: "layout"
+        widget: "hidden"
+        default: "galleryLayout_festival.html"

@@ -2,21 +2,18 @@
 layout: posts_corporate
 ---
 
-<section class="posts__body">
-  {% set postslist = collections.post_corporate %} {% for post_corporate in
-  postslist | reverse %}
-  <article class="posts__content">
-    <h3 class="posts__heading">
-      <a href="{{ post_corporate.url | url }}">
-        {% if post_corporate.data.title %} {{ post_corporate.data.title }} {%
-        else %} Untitled {% endif %}
-      </a>
-    </h3>
-      <a href="{{ post_corporate.url | url }}" class="posts__link"
-        >
-        <img src="{{post_corporate.url}}{{post_corporate.data.image}}" class="posts__image" alt="" />
-      </a>
-    </p>
-  </article>
+<section class="post__body">
+  {% set postslist = collections.corporate %} {% for corporate in postslist |
+  reverse %}
+  <figure class="content">
+    <a href="{{ corporate.url | url }}" class="post__link">
+      <img
+        src="{{corporate.url}}{{corporate.data.coverImage}}"
+        class="post__image"
+        alt=""
+      />
+      <figcaption>{{ corporate.data.title }}</figcaption>
+    </a>
+  </figure>
   {% endfor %}
 </section>

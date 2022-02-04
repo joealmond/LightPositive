@@ -1,4 +1,4 @@
 {
-  "layout": "posts_festival",
-  "tags": ["post_festival"]
+  "layout": "default",
+  "tags": "festival"
 }

@@ -38,8 +38,13 @@ module.exports = function (eleventyConfig) {
 
   // Copy all *.jpf files keeping the same directory structure
   eleventyConfig.addPassthroughCopy("./src/**/*.jpg");
+  eleventyConfig.addPassthroughCopy("./src/**/*.jpeg");
   eleventyConfig.addPassthroughCopy("./src/**/*.png");
   eleventyConfig.addPassthroughCopy("./src/**/*.svg");
+  eleventyConfig.addPassthroughCopy("./src/**/*.gif");
+  eleventyConfig.addPassthroughCopy("./src/**/*.webp");
+  eleventyConfig.addPassthroughCopy("./src/**/*.bmp");
+  eleventyConfig.addPassthroughCopy("./src/**/*.tiff");
 
   // Let Eleventy transform HTML files as nunjucks
   // So that we can use .html instead of .njk

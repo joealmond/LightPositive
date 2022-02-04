@@ -2,20 +2,18 @@
 layout: posts_festival
 ---
 
-<section class="posts__body">
-  {% set postslist = collections.post_festival %} {% for post_festival in
-  postslist | reverse %}
-  <article class="posts__content">
-    <h2 class="posts__heading">
-      <a href="{{ post_festival.url | url }}">
-        {% if post_festival.data.title %} {{ post_festival.data.title }} {% else
-        %} Untitled {% endif %}
-      </a>
-    </h2>
-      <a href="{{ post_festival.url | url }}" class="posts__link">
-        <img src="{{post_festival.url}}{{post_festival.data.image}}" class="posts__image" alt="" />
-      </a>
-    </p>
-  </article>
+<section class="post__body">
+  {% set postslist = collections.festival %} {% for festival in postslist |
+  reverse %}
+  <figure class="post__content">
+    <a href="{{ festival.url | url }}" class="post__link">
+      <img
+        src="{{festival.url}}{{festival.data.coverImage}}"
+        class="post__image"
+        alt=""
+      />
+      <figcaption>{{ festival.data.title }}</figcaption>
+    </a>
+  </figure>
   {% endfor %}
 </section>
