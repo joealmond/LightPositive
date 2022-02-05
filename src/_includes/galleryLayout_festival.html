@@ -1,21 +1,29 @@
 ---
 layout: default
-pagination:
-  data: testdata
-  size: 1
-testdata:
-  itemkey1: 1
-  itemkey2: 2
-  itemkey3: 3
 ---
 
+<!-- prettier-ignore -->
 <section class="post__body">
-  {% set i = 1 %} {% set postlist = collections.festival %} {% set images =
-  postlist[i].data.galleryImages %} {% for image in images %} {% set i =
-  loop.index %}
-  <p>{{image}}</p>
+  {% set postlist = collections.festival %} 
+  {% for post in postlist %}
+
+  
+  {% set images = post.data.galleryImages %} 
+  {% for image in images %}
+  
+
   <div class="post__content">
     <a href="{{image}}"><img src="{{image}}" class="post__image" alt="" /></a>
   </div>
+  
+  
   {% endfor %}
+
+
+  {% endfor %} 
+  
+  
+  
+
+
 </section>

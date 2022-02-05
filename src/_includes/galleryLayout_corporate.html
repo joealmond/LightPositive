@@ -2,12 +2,28 @@
 layout: default
 ---
 
+<!-- prettier-ignore -->
 <section class="post__body">
-  {% set image = collections.corporate %} {% for corporate in image %}
+  {% set postlist = collections.corporate %} 
+  {% for post in postlist %}
+
+  
+  {% set images = post.data.galleryImages %} 
+  {% for image in images %}
+  
+
   <div class="post__content">
-    <a href="{{corporate.url}}{{corporate.data.galleryImages[0]}}"><img src="{{corporate.url}}{{corporate.data.galleryImages[0]}}" class="post__image" alt=""/></a>
-    <a href="{{corporate.url}}{{corporate.data.galleryImages[1]}}"><img src="{{corporate.url}}{{corporate.data.galleryImages[1]}}" class="post__image" alt=""/></a>
-    <a href="{{corporate.url}}{{corporate.data.galleryImages[2]}}"><img src="{{corporate.url}}{{corporate.data.galleryImages[2]}}" class="post__image" alt=""/></a>
-  </dvi>
+    <a href="{{image}}"><img src="{{image}}" class="post__image" alt="" /></a>
+  </div>
+  
+  
   {% endfor %}
+
+
+  {% endfor %} 
+  
+  
+  
+
+
 </section>
