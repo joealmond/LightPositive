@@ -1,13 +1,21 @@
 ---
 layout: default
+pagination:
+  data: testdata
+  size: 1
+testdata:
+  itemkey1: 1
+  itemkey2: 2
+  itemkey3: 3
 ---
 
 <section class="post__body">
-  {% set image = collections.festival %} {% for festival in image %}
+  {% set i = 1 %} {% set postlist = collections.festival %} {% set images =
+  postlist[i].data.galleryImages %} {% for image in images %} {% set i =
+  loop.index %}
+  <p>{{image}}</p>
   <div class="post__content">
-  <a href="{{festival.url}}{{festival.data.galleryImages[0]}}"><img src="{{festival.url}}{{festival.data.galleryImages[0]}}" class="post__image" alt=""/></a>
-  <a href="{{festival.url}}{{festival.data.galleryImages[1]}}"><img src="{{festival.url}}{{festival.data.galleryImages[1]}}" class="post__image" alt=""/></a>
-  <a href="{{festival.url}}{{festival.data.galleryImages[2]}}"><img src="{{festival.url}}{{festival.data.galleryImages[2]}}" class="post__image" alt=""/></a>
-  </dvi>
+    <a href="{{image}}"><img src="{{image}}" class="post__image" alt="" /></a>
+  </div>
   {% endfor %}
 </section>
