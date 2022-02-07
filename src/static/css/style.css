@@ -698,6 +698,7 @@ form > * {
   scroll-padding-inline: 2rem;
   scrollbar-color: var(--font-orange), var(--font-grey);
   scrollbar-width: thin;
+  height: min-content;
 }
 .post__card {
   display: grid;
