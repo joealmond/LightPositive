@@ -4,18 +4,20 @@ layout: default
 
 <!-- prettier-ignore -->
 <section class="post__body">
+
   {% set postlist = collections.corporate %} 
   {% for post in postlist %}
-
   
   {% set images = post.data.galleryImages %} 
   {% for image in images %}
   
+  {% if page.url == post.url %}
 
   <div class="post__content">
     <a href="{{image}}"><img src="{{image}}" class="post__image" alt="" /></a>
   </div>
   
+  {% endif %}
   
   {% endfor %}
 

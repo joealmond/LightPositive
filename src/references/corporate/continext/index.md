@@ -1,5 +1,5 @@
 ---
-title: Continext
+title: Continest
 coverImage: co-768x1024.jpg
 galleryImages:
   - co-768x1024.jpg
