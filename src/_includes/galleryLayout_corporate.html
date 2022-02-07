@@ -3,7 +3,8 @@ layout: default
 ---
 
 <!-- prettier-ignore -->
-<section class="post__body">
+<section class="post__content">
+  <div class="post__scroller">
 
   {% set postlist = collections.corporate %} 
   {% for post in postlist %}
@@ -13,19 +14,23 @@ layout: default
   
   {% if page.url == post.url %}
 
-  <div class="post__content">
-    <a href="{{image}}"><img src="{{image}}" class="post__image" alt="" /></a>
+  <div class="post__card">
+    <img src="{{image}}" class="post__image" alt="" />
   </div>
   
   {% endif %}
   
   {% endfor %}
 
-
   {% endfor %} 
   
-  
-  
-
-
+  </div>
 </section>
+<script>
+  let postBody = document.getElementsByClassName("post__content").item(0);
+  let src = document.getElementsByClassName("post__image").item(0).currentSrc;
+  let img = document.createElement("img");
+  img.src = src;
+  img.className = "post__image-selected";
+  postBody.appendChild(img);
+</script>
