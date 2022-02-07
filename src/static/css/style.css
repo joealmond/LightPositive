@@ -693,12 +693,13 @@ form > * {
   padding: 0.3rem;
   margin: 3vh 0;
   overflow-x: auto;
+  overflow-y: hidden;
   overscroll-behavior-inline: contain;
   scroll-snap-type: inline mandatory;
   scroll-padding-inline: 2rem;
   scrollbar-color: var(--font-orange), var(--font-grey);
   scrollbar-width: thin;
-  height: min-content;
+  height: 100%;
 }
 .post__card {
   display: grid;
