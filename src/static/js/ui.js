@@ -31,28 +31,42 @@ const navBar = document.querySelector(".nav__nav");
 const navLogo = document.querySelector(".nav__logo-img");
 const navButtonImage = document.querySelector(".nav__button-image");
 
-let prevOffset = window.pageYOffset;
-document.addEventListener("scroll", () => {
-  let currOffset = window.pageYOffset;
-  console.log(currOffset, document.body.clientHeight - 500);
-  if (currOffset < 10 || currOffset < document.body.clientHeight - 500) {
-    function repeatOften() {
-      if (prevOffset > currOffset) {
-        navBar.style.height = "90px";
-        //   setTimeout(() => {
-        navLogo.classList.remove("navHide");
-        navButton.classList.remove("navHide");
-        navButtonImage.classList.remove("navHide");
-        //   }, 100);
-      } else {
-        navBar.style.height = "0px";
-        navLogo.classList.add("navHide");
-        navButton.classList.add("navHide");
-        navButtonImage.classList.add("navHide");
-      }
-      prevOffset = currOffset;
-      requestAnimationFrame(repeatOften);
-    }
-    requestAnimationFrame(repeatOften);
+// let prevOffset = window.pageYOffset;
+// document.addEventListener("scroll", () => {
+//   let currOffset = window.pageYOffset;
+//     function repeatOften() {
+//       if (prevOffset > currOffset) {
+//         navBar.style.height = "90px";
+//         //   setTimeout(() => {
+//         navLogo.classList.remove("navHide");
+//         navButton.classList.remove("navHide");
+//         navButtonImage.classList.remove("navHide");
+//         //   }, 100);
+//       } else {
+//         navBar.style.height = "0px";
+//         navLogo.classList.add("navHide");
+//         navButton.classList.add("navHide");
+//         navButtonImage.classList.add("navHide");
+//       }
+//       prevOffset = currOffset;
+//       requestAnimationFrame(repeatOften);
+//     }
+//     requestAnimationFrame(repeatOften);
+// });
+
+var lastScrollTop;
+window.addEventListener("scroll", function () {
+  var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+  if (scrollTop > lastScrollTop) {
+    navBar.style.height = "0px";
+    navLogo.classList.add("navHide");
+    navButton.classList.add("navHide");
+    navButtonImage.classList.add("navHide");
+  } else {
+    navBar.style.height = "90px";
+    navLogo.classList.remove("navHide");
+    navButton.classList.remove("navHide");
+    navButtonImage.classList.remove("navHide");
   }
+  lastScrollTop = scrollTop;
 });
