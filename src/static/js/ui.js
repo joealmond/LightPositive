@@ -57,16 +57,20 @@ const navButtonImage = document.querySelector(".nav__button-image");
 var lastScrollTop;
 window.addEventListener("scroll", function () {
   var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-  if (scrollTop > lastScrollTop) {
-    navBar.style.height = "0px";
-    navLogo.classList.add("navHide");
-    navButton.classList.add("navHide");
-    navButtonImage.classList.add("navHide");
-  } else {
-    navBar.style.height = "90px";
-    navLogo.classList.remove("navHide");
-    navButton.classList.remove("navHide");
-    navButtonImage.classList.remove("navHide");
+  function repeatOften() {
+    if (scrollTop > lastScrollTop) {
+      navBar.style.height = "0px";
+      navLogo.classList.add("navHide");
+      navButton.classList.add("navHide");
+      navButtonImage.classList.add("navHide");
+    } else {
+      navBar.style.height = "90px";
+      navLogo.classList.remove("navHide");
+      navButton.classList.remove("navHide");
+      navButtonImage.classList.remove("navHide");
+    }
+    lastScrollTop = scrollTop;
+    requestAnimationFrame(repeatOften);
   }
-  lastScrollTop = scrollTop;
+  requestAnimationFrame(repeatOften);
 });
