@@ -24,14 +24,13 @@ module.exports = function (eleventyConfig) {
   // Copy Static Files to /_Site
   eleventyConfig.addPassthroughCopy({
     "./src/admin/config.yml": "./admin/config.yml",
-    "./node_modules/alpinejs/dist/cdn.min.js": "./static/js/alpine.js",
   });
 
   // Copy CSS Folder to /_site
   eleventyConfig.addPassthroughCopy("./src/static/css");
 
-  // Copy Image Folder to /_site
-  // eleventyConfig.addPassthroughCopy("./src/static/img");
+  // Copy js Folder to /_site
+  eleventyConfig.addPassthroughCopy("./src/static/js");
 
   // Copy favicon to route of /_site
   eleventyConfig.addPassthroughCopy("./src/favicon.ico");

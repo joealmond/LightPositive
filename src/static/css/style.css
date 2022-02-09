@@ -155,6 +155,9 @@ form > * {
 
 .nav__list-container {
 }
+.nav__list {
+}
+
 .nav__list-item {
   padding: 25px;
 }
@@ -170,8 +173,11 @@ form > * {
   filter: drop-shadow(0px 0px 6px var(--font-orange));
 }
 .nav__button {
-  background-color: var(--bg-dark);
   display: none;
+  background-color: var(--bg-dark);
+}
+
+nav-menu__conteiner {
 }
 .nav__button-image:hover,
 .nav__button-image:focus {
@@ -183,11 +189,57 @@ form > * {
   padding: 25px;
 }
 @media screen and (max-width: 700px) {
-  .nav__list-conatiner {
+  .nav__list {
     display: none;
+    flex-direction: column;
+    background-color: var(--bg-dark);
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-dark);
+  }
+  .nav__nav {
+    flex-direction: column;
+  }
+  .nav__list-container {
+    display: none;
+  }
+  .nav__list-item {
+    text-align: center;
+    padding: 0;
+    background-color: var(--bg-dark);
+    border-top: 1px solid var(--bg-mid);
+  }
+  .nav__list-item:last-of-type {
+    border-bottom: 1px solid var(--bg-mid);
+  }
+  .nav__list-item:first-of-type {
+    border-top: 1px solid var(--font-orange);
+  }
+  .nav__nav {
+    border-bottom: 1px solid var(--font-orange);
+  }
+  .nav__list-item:hover,
+  .nav__list-item:focus {
+    transition: all 0.5s ease-out;
+    filter: drop-shadow(0px 0px 6px var(--font-orange));
+  }
+  .nav__list-link {
+    display: block;
+    height: 100%;
+    width: 100%;
+    padding: 2.5rem;
+  }
+
+  .nav-menu__conteiner {
+    position: absolute;
+    align-self: end;
+    order: -1;
   }
   .nav__button {
     display: block;
+  }
+  .nav__logo-warper {
   }
 }
 
@@ -731,3 +783,9 @@ form > * {
 .post__scroller::-webkit-scrollbar-thumb {
   height: 10px;
 } */
+
+/* UTILITY CLASSES */
+
+.show {
+  display: block;
+}
