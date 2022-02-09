@@ -129,6 +129,7 @@ form > * {
   color: var(--font-grey);
   position: sticky;
   top: 0;
+  z-index: 5;
 }
 
 .nav__nav {
@@ -208,7 +209,7 @@ nav-menu__conteiner {
     text-align: center;
     padding: 0;
     background-color: var(--bg-dark);
-    border-top: 1px solid var(--bg-mid);
+    border-top: 1px solid var(--font-dark-grey);
     height: 0;
   }
   .nav__list-item:last-of-type {
