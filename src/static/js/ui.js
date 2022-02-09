@@ -26,3 +26,27 @@ window.addEventListener("resize", () => {
   });
   navList.classList.remove("show");
 });
+
+const navBar = document.querySelector(".nav__nav");
+const navLogo = document.querySelector(".nav__logo-img");
+const navButtonImage = document.querySelector(".nav__button-image");
+
+let prevOffset = window.pageYOffset;
+document.addEventListener("scroll", () => {
+  let currOffset = window.pageYOffset;
+  if (prevOffset > currOffset) {
+    navBar.style.height = "90px";
+    setTimeout(() => {
+      navLogo.classList.remove("navHide");
+      navButton.classList.remove("navHide");
+      navButtonImage.classList.remove("navHide");
+    }, 100);
+  } else {
+    navBar.style.height = "0px";
+
+    navLogo.classList.add("navHide");
+    navButton.classList.add("navHide");
+    navButtonImage.classList.add("navHide");
+  }
+  prevOffset = currOffset;
+});
