@@ -56,21 +56,27 @@ const navButtonImage = document.querySelector(".nav__button-image");
 
 var lastScrollTop;
 window.addEventListener("scroll", function () {
+  const mediaQuery = window.matchMedia("(max-width: 700px)");
+  if (!mediaQuery.matches) return;
+
   var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-  function repeatOften() {
-    if (scrollTop > lastScrollTop) {
-      navBar.style.height = "0px";
-      navLogo.classList.add("navHide");
-      navButton.classList.add("navHide");
-      navButtonImage.classList.add("navHide");
-    } else {
-      navBar.style.height = "90px";
+  if (scrollTop < 90) return;
+  //   function repeatOften() {
+  if (scrollTop > lastScrollTop) {
+    navBar.style.height = "0px";
+    navLogo.classList.add("navHide");
+    navButton.classList.add("navHide");
+    navButtonImage.classList.add("navHide");
+  } else {
+    navBar.style.height = "90px";
+    setTimeout(() => {
       navLogo.classList.remove("navHide");
       navButton.classList.remove("navHide");
       navButtonImage.classList.remove("navHide");
-    }
-    lastScrollTop = scrollTop;
-    requestAnimationFrame(repeatOften);
+    }, 100);
   }
-  requestAnimationFrame(repeatOften);
+  lastScrollTop = scrollTop;
+  //     requestAnimationFrame(repeatOften);
+  //   }
+  //   requestAnimationFrame(repeatOften);
 });
