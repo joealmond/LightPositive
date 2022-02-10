@@ -54,30 +54,30 @@ const navButtonImage = document.querySelector(".nav__button-image");
 //     requestAnimationFrame(repeatOften);
 // });
 
-var lastScrollTop;
-window.addEventListener("scroll", function () {
-  const mediaQuery = window.matchMedia("(max-width: 700px)");
-  if (!mediaQuery.matches) return;
+// var lastScrollTop;
+// window.addEventListener("scroll", function () {
+//   const mediaQuery = window.matchMedia("(max-width: 700px)");
+//   if (!mediaQuery.matches) return;
 
-  var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-  if (scrollTop < 90) return;
-  if (document.body.clientHeight > scrollTop + 700) {
-    if (scrollTop > lastScrollTop) {
-      //   function repeatOften() {
-      navBar.style.height = "0px";
-      navLogo.classList.add("navHide");
-      navButton.classList.add("navHide");
-      navButtonImage.classList.add("navHide");
-    } else {
-      navBar.style.height = "90px";
-      setTimeout(() => {
-        navLogo.classList.remove("navHide");
-        navButton.classList.remove("navHide");
-        navButtonImage.classList.remove("navHide");
-      }, 100);
-    }
-    lastScrollTop = scrollTop;
-  }
+//   var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+//   if (scrollTop < 90) return;
+//   if (document.body.clientHeight > scrollTop + 700) {
+//     if (scrollTop > lastScrollTop) {
+//       //   function repeatOften() {
+//       navBar.style.height = "0px";
+//       navLogo.classList.add("navHide");
+//       navButton.classList.add("navHide");
+//       navButtonImage.classList.add("navHide");
+//     } else {
+//       navBar.style.height = "90px";
+//       setTimeout(() => {
+//         navLogo.classList.remove("navHide");
+//         navButton.classList.remove("navHide");
+//         navButtonImage.classList.remove("navHide");
+//       }, 100);
+//     }
+//     lastScrollTop = scrollTop;
+//   }
   //     requestAnimationFrame(repeatOften);
   //   }
   //   requestAnimationFrame(repeatOften);
