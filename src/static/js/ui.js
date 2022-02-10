@@ -66,22 +66,24 @@ window.addEventListener("scroll", function () {
 
   // function repeatOften() {
 
-  // if (scrollTop > lastScrollTop) {
-  //   navBar.style.height = "0px";
-  //   navLogo.classList.add("navHide");
-  //   navButton.classList.add("navHide");
-  //   navButtonImage.classList.add("navHide");
-  // } else if (document.body.clientHeight > scrollTop + 600) {
-  //   navBar.style.height = "90px";
-  //   setTimeout(() => {
-  //     navLogo.classList.remove("navHide");
-  //     navButton.classList.remove("navHide");
-  //     navButtonImage.classList.remove("navHide");
-  //   }, 100);
-  // }
-  // if (!document.body.clientHeight < scrollTop + 600) lastScrollTop = scrollTop;
+  if (scrollTop > lastScrollTop) {
+    navBar.style.height = "0px";
+    navLogo.classList.add("navHide");
+    navButton.classList.add("navHide");
+    navButtonImage.classList.add("navHide");
+  } else {
+    navBar.style.height = "90px";
+    setTimeout(() => {
+      navLogo.classList.remove("navHide");
+      navButton.classList.remove("navHide");
+      navButtonImage.classList.remove("navHide");
+    }, 100);
+  }
+  lastScrollTop = scrollTop - 10;
 
   //   requestAnimationFrame(repeatOften);
   // }
   // requestAnimationFrame(repeatOften);
 });
+
+// if (document.body.clientHeight > scrollTop + 600)
