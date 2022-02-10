@@ -393,7 +393,7 @@ nav-menu__conteiner {
   display: none;
 }
 .hu-sw {
-  color: var(--font-orange);
+  /* color: var(--font-orange); */
 }
 .en-sw {
 }
@@ -817,4 +817,15 @@ nav-menu__conteiner {
 
 .navHide {
   display: none;
+}
+
+.hideHu {
+  display: none;
+}
+.showEn {
+  display: block;
+}
+
+.orangeGrey {
+  color: var(--font-orange);
 }
