@@ -103,14 +103,14 @@ figure {
 /* LAYOUT */
 html {
   scroll-behavior: smooth;
+  overscroll-behavior-y: none;
+  overscroll-behavior-block: none;
 }
 
 body {
   margin: 0;
   background-color: var(--bg-mid);
   overflow-x: hidden;
-  scroll-behavior: smooth;
-  overscroll-behavior: none;
 }
 
 button,
@@ -132,6 +132,8 @@ form > * {
   position: sticky;
   top: 0;
   z-index: 5;
+  overscroll-behavior-y: none;
+  overscroll-behavior-block: none;
 }
 
 .nav__nav {
@@ -141,6 +143,8 @@ form > * {
   display: flex;
   justify-content: space-between;
   transition: all 0.3s ease-out;
+  overscroll-behavior-y: none;
+  overscroll-behavior-block: none;
 }
 
 .nav__logo-warper {
