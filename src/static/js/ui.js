@@ -78,7 +78,7 @@ const navButtonImage = document.querySelector(".nav__button-image");
 //     }
 //     lastScrollTop = scrollTop;
 //   }
-  //     requestAnimationFrame(repeatOften);
-  //   }
-  //   requestAnimationFrame(repeatOften);
-});
+//     requestAnimationFrame(repeatOften);
+//   }
+//   requestAnimationFrame(repeatOften);
+// });
