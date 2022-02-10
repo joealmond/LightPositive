@@ -61,8 +61,6 @@ window.addEventListener("scroll", function () {
 
   var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
   if (scrollTop < 90) return;
-  console.log(document.body.clientHeight, scrollTop + 600);
-  if (document.body.clientHeight < scrollTop + 600) return;
   //   function repeatOften() {
   if (scrollTop > lastScrollTop) {
     navBar.style.height = "0px";
@@ -77,7 +75,7 @@ window.addEventListener("scroll", function () {
       navButtonImage.classList.remove("navHide");
     }, 100);
   }
-  lastScrollTop = scrollTop;
+  if (document.body.clientHeight > scrollTop + 600) lastScrollTop = scrollTop;
   //     requestAnimationFrame(repeatOften);
   //   }
   //   requestAnimationFrame(repeatOften);
