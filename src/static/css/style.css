@@ -102,7 +102,7 @@ figure {
 
 /* LAYOUT */
 html {
-  /* scroll-behavior: smooth; */
+  scroll-behavior: smooth;
   overscroll-behavior-y: none;
   overscroll-behavior-block: none;
   -webkit-overflow-scrolling: touch;
