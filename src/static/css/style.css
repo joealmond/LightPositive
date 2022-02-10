@@ -105,6 +105,7 @@ html {
   scroll-behavior: smooth;
   overscroll-behavior-y: none;
   overscroll-behavior-block: none;
+  -webkit-overflow-scrolling: auto;
 }
 
 body {
