@@ -61,21 +61,22 @@ window.addEventListener("scroll", function () {
 
   var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
   if (scrollTop < 90) return;
-  //   function repeatOften() {
-  if (scrollTop > lastScrollTop) {
-    navBar.style.height = "0px";
-    navLogo.classList.add("navHide");
-    navButton.classList.add("navHide");
-    navButtonImage.classList.add("navHide");
-  } else {
-    navBar.style.height = "90px";
-    setTimeout(() => {
-      navLogo.classList.remove("navHide");
-      navButton.classList.remove("navHide");
-      navButtonImage.classList.remove("navHide");
-    }, 100);
-  }
-  if (document.body.clientHeight > scrollTop + 600) lastScrollTop = scrollTop;
+  if (document.body.clientHeight > scrollTop + 650)
+    if (scrollTop > lastScrollTop) {
+      //   function repeatOften() {
+      navBar.style.height = "0px";
+      navLogo.classList.add("navHide");
+      navButton.classList.add("navHide");
+      navButtonImage.classList.add("navHide");
+    } else {
+      navBar.style.height = "90px";
+      setTimeout(() => {
+        navLogo.classList.remove("navHide");
+        navButton.classList.remove("navHide");
+        navButtonImage.classList.remove("navHide");
+      }, 100);
+    }
+  lastScrollTop = scrollTop;
   //     requestAnimationFrame(repeatOften);
   //   }
   //   requestAnimationFrame(repeatOften);
