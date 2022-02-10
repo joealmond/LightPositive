@@ -54,36 +54,42 @@ const navButtonImage = document.querySelector(".nav__button-image");
 //     requestAnimationFrame(repeatOften);
 // });
 
-var lastScrollTop;
-window.addEventListener("scroll", function () {
-  const mediaQuery = window.matchMedia("(max-width: 700px)");
-  if (!mediaQuery.matches) return;
+// let lastScrollTop;
+// window.addEventListener("scroll", function () {
+//   const mediaQuery = window.matchMedia("(max-width: 700px)");
+//   if (!mediaQuery.matches) return;
 
-  var scrollTop = window.pageYOffset;
-  // || document.documentElement.scrollTop;
-  if (scrollTop < 90) return;
-  console.log(document.body.clientHeight, scrollTop + 600);
+//   // function repeatOften() {
 
-  // function repeatOften() {
+//   if (scrollTop > lastScrollTop) {
+//     navBar.style.height = "0px";
+//     navLogo.classList.add("navHide");
+//     navButton.classList.add("navHide");
+//     navButtonImage.classList.add("navHide");
+//   } else {
+//     navBar.style.height = "90px";
+//     setTimeout(() => {
+//       navLogo.classList.remove("navHide");
+//       navButton.classList.remove("navHide");
+//       navButtonImage.classList.remove("navHide");
+//     }, 100);
+//   }
+//   lastScrollTop = scrollTop;
 
-  if (scrollTop > lastScrollTop) {
-    navBar.style.height = "0px";
-    navLogo.classList.add("navHide");
-    navButton.classList.add("navHide");
-    navButtonImage.classList.add("navHide");
-  } else {
-    navBar.style.height = "90px";
-    setTimeout(() => {
-      navLogo.classList.remove("navHide");
-      navButton.classList.remove("navHide");
-      navButtonImage.classList.remove("navHide");
-    }, 100);
-  }
-  lastScrollTop = scrollTop - 10;
+//   //   requestAnimationFrame(repeatOften);
+//   // }
+//   // requestAnimationFrame(repeatOften);
+// });
 
-  //   requestAnimationFrame(repeatOften);
-  // }
-  // requestAnimationFrame(repeatOften);
-});
+// let scrollTop = window.scrollY;
+// let docHeight = document.body.offsetHeight;
+// let winHeight = window.innerHeight;
+// let scrollPercent = scrollTop / (docHeight - winHeight);
+// let scrollPercentRounded = Math.round(scrollPercent * 100);
 
-// if (document.body.clientHeight > scrollTop + 600)
+// window.addEventListener("scroll", function () {
+//   const mediaQuery = window.matchMedia("(max-width: 700px)");
+//   if (!mediaQuery.matches) return;
+//   console.log(winHeight);
+//   console.log(docHeight);
+// });

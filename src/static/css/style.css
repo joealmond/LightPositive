@@ -112,6 +112,9 @@ body {
   margin: 0;
   background-color: var(--bg-mid);
   overflow-x: hidden;
+  overscroll-behavior-y: none;
+  overscroll-behavior-block: none;
+  -webkit-overflow-scrolling: touch;
 }
 
 button,
@@ -209,6 +212,10 @@ nav-menu__conteiner {
   }
   .nav__nav {
     flex-direction: column;
+  }
+  .nav__container {
+    position: sticky;
+    top: -90px;
   }
   .nav__list-container {
     display: none;
