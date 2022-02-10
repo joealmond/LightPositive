@@ -27,69 +27,15 @@ window.addEventListener("resize", () => {
   navList.classList.remove("show");
 });
 
-const navBar = document.querySelector(".nav__nav");
-const navLogo = document.querySelector(".nav__logo-img");
-const navButtonImage = document.querySelector(".nav__button-image");
+const navBar = document.querySelector(".nav__container");
 
-// let prevOffset = window.pageYOffset;
-// document.addEventListener("scroll", () => {
-//   let currOffset = window.pageYOffset;
-//     function repeatOften() {
-//       if (prevOffset > currOffset) {
-//         navBar.style.height = "90px";
-//         //   setTimeout(() => {
-//         navLogo.classList.remove("navHide");
-//         navButton.classList.remove("navHide");
-//         navButtonImage.classList.remove("navHide");
-//         //   }, 100);
-//       } else {
-//         navBar.style.height = "0px";
-//         navLogo.classList.add("navHide");
-//         navButton.classList.add("navHide");
-//         navButtonImage.classList.add("navHide");
-//       }
-//       prevOffset = currOffset;
-//       requestAnimationFrame(repeatOften);
-//     }
-//     requestAnimationFrame(repeatOften);
-// });
-
-// let lastScrollTop;
-// window.addEventListener("scroll", function () {
-//   const mediaQuery = window.matchMedia("(max-width: 700px)");
-//   if (!mediaQuery.matches) return;
-
-//   // function repeatOften() {
-
-//   if (scrollTop > lastScrollTop) {
-//     navBar.style.height = "0px";
-//     navLogo.classList.add("navHide");
-//     navButton.classList.add("navHide");
-//     navButtonImage.classList.add("navHide");
-//   } else {
-//     navBar.style.height = "90px";
-//     setTimeout(() => {
-//       navLogo.classList.remove("navHide");
-//       navButton.classList.remove("navHide");
-//       navButtonImage.classList.remove("navHide");
-//     }, 100);
-//   }
-//   lastScrollTop = scrollTop;
-
-//   //   requestAnimationFrame(repeatOften);
-//   // }
-//   // requestAnimationFrame(repeatOften);
-// });
-
-// let scrollTop = window.scrollY;
-// let docHeight = document.body.offsetHeight;
-// let winHeight = window.innerHeight;
-// let scrollPercent = scrollTop / (docHeight - winHeight);
-// let scrollPercentRounded = Math.round(scrollPercent * 100);
-
-// window.addEventListener("scroll", function () {
-//   const mediaQuery = window.matchMedia("(max-width: 700px)");
-//   if (!mediaQuery.matches) return;
-//   console.log(winHeight);
-//   console.log(docHeight);
-// });
+let prevOffset = window.pageYOffset;
+document.addEventListener("scroll", () => {
+  let currOffset = window.pageYOffset;
+  if (prevOffset > currOffset) {
+    navBar.style.top = "0px";
+  } else {
+    navBar.style.top = "-90px";
+  }
+  prevOffset = currOffset;
+});

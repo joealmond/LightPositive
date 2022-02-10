@@ -216,6 +216,7 @@ nav-menu__conteiner {
   .nav__container {
     position: sticky;
     top: -90px;
+    transition: all 0.3s ease-out;
   }
   .nav__list-container {
     display: none;
