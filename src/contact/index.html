@@ -112,6 +112,7 @@ path: contact
     if (typeof grecaptcha === "object") {
       if (!grecaptcha.getResponse().length > 0) {
         event.preventDefault()
+        submitButton.setCustomValidity("Jelöld be az alábbi jelölömezőt is!");
     }
     } else {
       console.log("Works only when deployed.");
