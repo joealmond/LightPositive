@@ -107,7 +107,7 @@ path: contact
 <script>
   const submitButton = document.getElementById("form__submit--input");
 
-  submitButton.addEventListener("hover", (event) => {
+  submitButton.addEventListener("mouseover", (event) => {
       if (!grecaptcha.getResponse().length > 0) {
         submitButton.title = "Jelöld be az alábbi jelölömezőt is!";
       } else {
