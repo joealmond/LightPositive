@@ -107,12 +107,12 @@ path: contact
 <script>
   const submitButton = document.getElementById("form__submit--input");
 
+
   submitButton.addEventListener("click", (event) => {
     if (typeof grecaptcha === "object") {
       if (!grecaptcha.getResponse().length > 0) {
         event.preventDefault()
-    } else {
-      submitButton.setCustomValidity("Jelöld be az alábbi jelölömezőt is!");
+        submitButton.setCustomValidity("Jelöld be az alábbi jelölömezőt is!");
     }
     } else {
       console.log("Works only when deployed.");
