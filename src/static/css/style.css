@@ -482,6 +482,9 @@ nav-menu__conteiner {
   border-radius: 2px;
 }
 .form__item:last-of-type {
+  text-align: center;
+  padding: 0;
+  margin: 0;
   background-color: rgb(249, 249, 249);
 }
 .form__item > input {
