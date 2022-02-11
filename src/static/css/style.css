@@ -482,9 +482,8 @@ nav-menu__conteiner {
   border-radius: 2px;
 }
 .form__item:last-of-type {
-  text-align: center;
   padding: 0;
-  margin: 35px;
+  margin-left: 35px;
 }
 .form__item > input {
   height: 3rem;
