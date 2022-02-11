@@ -105,16 +105,18 @@ path: contact
 
 
 <script>
-  function unHideButton() {
+  const submitButton = document.getElementById("form__submit--input");
+
+  function enableSubmit() {
     if (grecaptcha.getResponse().length > 0) {
-      document.getElementById('form__submit--input').disabled = false
+      submitButton.disabled = false
     }
   }
-  document.addEventListener("DOMContentLoaded", () => {
+  submitButton.addEventListener("click", () => {
     if (typeof grecaptcha === "object") {
-      document.querySelector('.captcha').dataset.callback = "unHideButton"
+      document.querySelector(".captcha").dataset.callback = "enableSubmit"
     } else {
-      console.log("Unable to add `data-callback` to grecaptcha as it doesn't exist.");
+      console.log("Works only when deployed.");
     }
   });
 </script>
