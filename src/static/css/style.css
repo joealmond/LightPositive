@@ -487,6 +487,12 @@ nav-menu__conteiner {
   outline: none;
   border: none;
   border-radius: 2px;
+  font-family: "Open Sans", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1.4rem;
+  line-height: 2rem;
+  letter-spacing: -0.015em;
 }
 .form__item > *::placeholder {
   font-family: "Open Sans", sans-serif;
