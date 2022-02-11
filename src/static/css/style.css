@@ -481,6 +481,9 @@ nav-menu__conteiner {
   border: none;
   border-radius: 2px;
 }
+.form__item:last-of-type {
+  background-color: rgb(249, 249, 249);
+}
 .form__item > input {
   height: 3rem;
   width: 98%;
