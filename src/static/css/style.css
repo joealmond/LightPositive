@@ -847,3 +847,8 @@ nav-menu__conteiner {
 .orangeGrey {
   color: var(--font-orange);
 }
+
+.succesMessage {
+  text-align: center;
+  margin-top: 10vh;
+}
