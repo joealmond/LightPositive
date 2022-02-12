@@ -807,7 +807,6 @@ nav-menu__conteiner {
 .post__image-container {
   display: flex;
   margin: auto;
-  height: 70vh;
 }
 .post__image-container > button {
   background-color: var(--bg-mid);
